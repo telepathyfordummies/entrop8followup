@@ -52,6 +52,14 @@ p {
     margin-bottom: 25px;
 }
 
+.font-red {
+  color: #ff0000;
+}
+
+.font-blue {
+  color: #4a90e2;
+}
+
 /* =========================
    BUTTONS!!
 ========================= */
