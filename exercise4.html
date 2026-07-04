@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heat Death</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Exercise 4: Heat Death</h1>
+</div>
+
+<div class="section">
+<p>Now, let's connect everything back to cosmology!</p>
+</div>
+
+<div class="section">
+<p><strong>Question 9:</strong> As entropy increases, energy tends to become:</p>
+
+<label><input type="radio" name="q9" value="A"> More concentrated</label>
+<label><input type="radio" name="q9" value="B"> More evenly distributed</label>
+<label><input type="radio" name="q9" value="C"> Destroyed</label>
+<label><input type="radio" name="q9" value="D"> Converted into matter</label>
+</div>
+
+<div class="section">
+<p><strong>Question 10:</strong> What is the primary reason physicists predict heat death?</p>
+
+<label><input type="radio" name="q10" value="A"> The universe is shrinking</label>
+<label><input type="radio" name="q10" value="B"> Stars consume all matter</label>
+<label><input type="radio" name="q10" value="C"> High-entropy states are statistically favored</label>
+<label><input type="radio" name="q10" value="D"> Gravity stops functioning</label>
+</div>
+
+<div class="section">
+<p><strong>Question 11:</strong> In a maximum-entropy universe:</p>
+
+<label><input type="radio" name="q11" value="A"> Energy gradients remain abundant</label>
+<label><input type="radio" name="q11" value="B"> Useful work becomes difficult or impossible</label>
+<label><input type="radio" name="q11" value="C"> Matter ceases to exist</label>
+<label><input type="radio" name="q11" value="D"> Time stops</label>
+</div>
+
+<div class="section">
+<p><strong>Question 12:</strong> Which statement best summarizes the Second Law of Thermodynamics?</p>
+
+<label><input type="radio" name="q12" value="A"> Systems tend toward less probable states</label>
+<label><input type="radio" name="q12" value="B"> Systems tend toward more probable states</label>
+<label><input type="radio" name="q12" value="C"> Systems seek equilibrium because particles stop moving</label>
+<label><input type="radio" name="q12" value="D"> Systems lose energy until motion ceases</label>
+</div>
+
+<button class="button button-primary" onclick="saveAnswers()">Submit Assessment</button>
+
+</div>
+
+<script>
+function saveAnswers() {
+
+sessionStorage.setItem("lab2_q9", document.querySelector('input[name="q9"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q10", document.querySelector('input[name="q10"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q11", document.querySelector('input[name="q11"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q12", document.querySelector('input[name="q12"]:checked')?.value || "");
+
+window.location.href = "results.html";
+}
+</script>
+
+</body>
+</html>
