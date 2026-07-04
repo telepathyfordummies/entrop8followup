@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Follow Up Results</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 250px;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Follow Up Results</h1>
+        <p>Probability, Microstates, and Entropy</p>
+    </div>
+
+    <div class="section">
+        <p id="scoreText">Calculating results...</p>
+        <p id="statusText"></p>
+    </div>
+
+    <div class="note">
+        Assessment data has been processed successfully.
+    </div>
+
+</div>
+
+<div id="popup" class="popup hidden">
+    <div class="popup-box">
+        <p id="popupText">Continue?</p>
+        <button onclick="proceed()">Continue</button>
+    </div>
+</div>
+
+<script>
+
+let passed = false;
+
+function gradeLab2() {
+
+    const key = {
+        lab2_q1: "A",
+        lab2_q2: "C",
+        lab2_q3: "C",
+        lab2_q4: "C",
+        lab2_q5: "A",
+        lab2_q6: "B",
+        lab2_q7: "A",
+        lab2_q8: "B",
+        lab2_q9: "B",
+        lab2_q10: "C",
+        lab2_q11: "B",
+        lab2_q12: "B"
+    };
+
+    let score = 0;
+
+    for (let question in key) {
+
+        let answer = sessionStorage.getItem(question);
+
+        if (answer === key[question]) {
+            score++;
+        }
+    }
+
+    passed = score >= 7;
+
+    document.getElementById("scoreText").innerText =
+        `Score: ${score} / 12`;
+
+    document.getElementById("statusText").innerText =
+        passed
+            ? "Status: Conceptual mastery achieved."
+            : "Status: Additional review recommended.";
+
+    sessionStorage.setItem("lab2Score", score);
+
+    document.getElementById("popupText").innerText =
+        passed
+            ? "Passing threshold achieved. Continue?"
+            : "Passing threshold not achieved. Continue?";
+
+    setTimeout(() => {
+        document.getElementById("popup").classList.remove("hidden");
+    }, 1000);
+}
+
+function proceed() {
+
+    if (passed) {
+        window.location.href = "https://telepathyfordummies.github.io/12LOSER/";
+    } else {
+        window.location.href = "failure.html";
+    }
+}
+
+gradeLab2();
+
+</script>
+
+</body>
+</html>
