@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reversibility</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Exercise 3: Reversibility</h1>
+</div>
+
+<div class="section">
+
+<p><strong>Initial State</strong></p>
+<pre><span class="font-red">RRRRRRRR</span> | <span class="font-blue">BBBBBBBB</span></pre>
+
+<p><strong>Final State</strong></p>
+<pre><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span> | <span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span><span class="font-blue">B</span><span class="font-red">R</span></pre>
+
+</div>
+
+<div class="section">
+<p><strong>Question 7:</strong> Which transition is more likely?</p>
+
+<label><input type="radio" name="q7" value="A"> Ordered → Mixed</label>
+<label><input type="radio" name="q7" value="B"> Mixed → Ordered</label>
+<label><input type="radio" name="q7" value="C"> Both equally likely</label>
+</div>
+
+<div class="section">
+<p><strong>Question 8:</strong> Is a mixed state spontaneously returning to perfect separation impossible?</p>
+
+<label><input type="radio" name="q8" value="A"> Yes</label>
+<label><input type="radio" name="q8" value="B"> No, but it is extremely unlikely</label>
+</div>
+
+<button class="button button-primary" onclick="saveAnswers()">Continue →</button>
+
+</div>
+
+<script>
+function saveAnswers() {
+
+sessionStorage.setItem("lab2_q7", document.querySelector('input[name="q7"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q8", document.querySelector('input[name="q8"]:checked')?.value || "");
+
+window.location.href = "exercise4.html";
+}
+</script>
+
+</body>
+</html>
