@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparing Macrostates</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Exercise 1: Comparing Macrostates</h1>
+</div>
+
+<div class="section">
+<h2>State A</h2>
+<pre>RRRRRRRR | BBBBBBBB</pre>
+
+<h2>State B</h2>
+<pre>RRRRBBBB | BBBBRRRR</pre>
+
+<h2>State C</h2>
+<pre>RBRBRBRB | BRBRBRBR</pre>
+</div>
+
+<div class="section">
+<p><strong>Question 1:</strong> Which state appears most ordered?</p>
+
+<label><input type="radio" name="q1" value="A"> A</label>
+<label><input type="radio" name="q1" value="B"> B</label>
+<label><input type="radio" name="q1" value="C"> C</label>
+</div>
+
+<div class="section">
+<p><strong>Question 2:</strong> Which state appears least ordered?</p>
+
+<label><input type="radio" name="q2" value="A"> A</label>
+<label><input type="radio" name="q2" value="B"> B</label>
+<label><input type="radio" name="q2" value="C"> C</label>
+</div>
+
+<div class="section">
+<p><strong>Question 3:</strong> Which state is expected to have the highest entropy?</p>
+
+<label><input type="radio" name="q3" value="A"> A</label>
+<label><input type="radio" name="q3" value="B"> B</label>
+<label><input type="radio" name="q3" value="C"> C</label>
+</div>
+
+<div class="section">
+<p><strong>Question 4:</strong> Which state is most likely to occur naturally?</p>
+
+<label><input type="radio" name="q4" value="A"> A</label>
+<label><input type="radio" name="q4" value="B"> B</label>
+<label><input type="radio" name="q4" value="C"> C</label>
+</div>
+
+<button class="button button-primary" onclick="saveAnswers()">Continue →</button>
+
+</div>
+
+<script>
+function saveAnswers() {
+sessionStorage.setItem("lab2_q1", document.querySelector('input[name="q1"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q2", document.querySelector('input[name="q2"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q3", document.querySelector('input[name="q3"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q4", document.querySelector('input[name="q4"]:checked')?.value || "");
+
+window.location.href = "exercise2.html";
+}
+</script>
+
+</body>
+</html>
