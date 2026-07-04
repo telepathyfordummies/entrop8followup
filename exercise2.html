@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small-System Probability</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Exercise 2: Small-System Probability</h1>
+</div>
+
+<div class="section">
+<p>Imagine two red particles and two blue particles.</p>
+
+<pre><span class="font-red">RR</span><span class="font-blue">BB</span></pre>
+</div>
+
+<div class="section">
+<p><strong>Question 5:</strong> How many ways can all red particles remain together?</p>
+
+<label><input type="radio" name="q5" value="A"> Very few</label>
+<label><input type="radio" name="q5" value="B"> About half</label>
+<label><input type="radio" name="q5" value="C"> Most arrangements</label>
+<label><input type="radio" name="q5" value="D"> All arrangements</label>
+</div>
+
+<div class="section">
+<p><strong>Question 6:</strong> Which statement best explains why mixed states are common?</p>
+
+<label><input type="radio" name="q6" value="A"> Mixed states require less energy</label>
+<label><input type="radio" name="q6" value="B"> Mixed states are more numerous</label>
+<label><input type="radio" name="q6" value="C"> Mixed states are more stable chemically</label>
+<label><input type="radio" name="q6" value="D"> Mixed states eliminate motion</label>
+</div>
+
+<button class="button button-primary" onclick="saveAnswers()">Continue →</button>
+
+</div>
+
+<script>
+function saveAnswers() {
+
+sessionStorage.setItem("lab2_q5", document.querySelector('input[name="q5"]:checked')?.value || "");
+sessionStorage.setItem("lab2_q6", document.querySelector('input[name="q6"]:checked')?.value || "");
+
+window.location.href = "exercise3.html";
+}
+</script>
+
+</body>
+</html>
